@@ -12,6 +12,7 @@ namespace LeetCodeSolutions
         {
 
             //we assume nums not null&&target > 0
+            //time Complexity: O(n^2) Space complexity: O(1)
             int[] TwoSumV1(int[] nums, int target)
             {
                 int numsLength = nums.Length;
@@ -29,6 +30,7 @@ namespace LeetCodeSolutions
                 }
                 return Array.Empty<int>();
             }
+            //time Complexity: O(n) Space complexity: O(n)
             int[] TwoSumV2(int[] nums, int target)
             {
                 int numsLength = nums.Length;
