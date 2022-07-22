@@ -22,8 +22,6 @@ namespace LeetCodeSolutions
         static void Main(string[] args)
         {
 
-            //we assume nums not null&&target > 0
-            //time Complexity: O(n^2) Space complexity: O(1)
             int[] TwoSumV1(int[] nums, int target)
             {
                 int numsLength = nums.Length;
@@ -41,7 +39,6 @@ namespace LeetCodeSolutions
                 }
                 return Array.Empty<int>();
             }
-            //time Complexity: O(n) Space complexity: O(n)
             int[] TwoSumV2(int[] nums, int target)
             {
                 int numsLength = nums.Length;
@@ -60,8 +57,6 @@ namespace LeetCodeSolutions
                 return Array.Empty<int>();
             }
 
-
-
             ListNode AddTwoNumbers(ListNode l1, ListNode l2)
             {
                 ListNode head = new ListNode();
@@ -72,13 +67,13 @@ namespace LeetCodeSolutions
                     curval = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + curval;
                     pointer.next = new ListNode(curval % 10);
                     pointer = pointer.next;
-                    // overflow decimal, like 12, we keep 1 for the next loop
+                    //overflow decimal, like 12, we keep 1 for the next loop
                     curval = curval / 10;
-                    // if next l1/l2 is not null, go to the next node
+                    //if next l1/l2 is not null, go to the next node
                     l1 = l1?.next;
                     l2 = l2?.next;
                 }
-                // if there is overflow left, add a node
+                //if there is overflow left, add a node
                 if (curval != 0)
                 {
                     pointer.next = new ListNode(curval);
@@ -86,6 +81,37 @@ namespace LeetCodeSolutions
                 return head.next;
             }
 
+            void SetZeroes(int[][] matrix)
+            {
+
+                var row = matrix.Length;
+                var column = matrix[0].Length;
+
+                var rowSet = new HashSet<int>();
+                var columnSet = new HashSet<int>();
+
+                for (int i = 0; i < row; i++)
+                {
+                    for (int j = 0; j < column; j++)
+                    {
+                        if (matrix[i][j] == 0)
+                        {
+                            rowSet.Add(i);
+                            columnSet.Add(j);
+                        }
+                    }
+                }
+
+                for (int i = 0; i < row; i++)
+                {
+                    for (int j = 0; j < column; j++)
+                        if (rowSet.Contains(i) || columnSet.Contains(j))
+                        {
+                            matrix[i][j] = 0;
+
+                        }
+                }
+            }
 
 
             #region functionCalls   
@@ -96,9 +122,9 @@ namespace LeetCodeSolutions
             //Console.WriteLine(TwoSumV2(nums1, target1));
             #endregion
             #region AddTwoNumbers
-        #endregion
+            #endregion
 
-
+           
             #endregion
 
 
@@ -119,5 +145,5 @@ namespace LeetCodeSolutions
 
             Console.ReadKey();
         }
-}
+    }
 }
