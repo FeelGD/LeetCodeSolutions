@@ -1,0 +1,8 @@
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\LeetCodeSolutions.exe.config
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\LeetCodeSolutions.exe
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\LeetCodeSolutions.pdb
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\LeetCodeSolutions.csproj.AssemblyReference.cache
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\LeetCodeSolutions.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\LeetCodeSolutions.csproj.CoreCompileInputs.cache
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\LeetCodeSolutions.exe
+C:\Users\Ali\source\repos\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\LeetCodeSolutions.pdb
