@@ -164,9 +164,9 @@ namespace LeetCodeSolutions
                     {
                         prefix = prefix.Replace(".", "");
                     }
-                    if (!emailsSet.Contains(prefix +"@"+ suffix))
+                    if (!emailsSet.Contains(prefix + "@" + suffix))
                     {
-                        emailsSet.Add(prefix +"@"+ suffix);
+                        emailsSet.Add(prefix + "@" + suffix);
                         counter++;
                     }
 
@@ -177,7 +177,27 @@ namespace LeetCodeSolutions
             }
 
 
-
+            bool ContainsDuplicate(int[] nums)
+            {
+                var numsSet = new HashSet<int>();
+                var numLength = nums.Length;
+                //foreach(int num in nums){
+                //    if(numsSet.Contains(num))
+                //    {
+                //        return true;
+                //    }
+                //    numsSet.Add(num);
+                //}
+                for (int i = 0; i < numLength; i++)
+                {
+                    if (numsSet.Contains(nums[i]))
+                    {
+                        return true;
+                    }
+                    numsSet.Add(nums[i]);
+                }
+                return false;
+            }
 
 
 
@@ -203,6 +223,10 @@ namespace LeetCodeSolutions
             #region NumUniqueEmails
             //string[] emails1 = { "test.email+alex@leetcode.com", "test.email.leet+alex@code.com" };
             //Console.WriteLine(NumUniqueEmails(emails1));
+            #endregion
+            #region ContainsDuplicate
+            int[] nums1 = { 1, 2, 1, 1 };
+            Console.WriteLine(ContainsDuplicate(nums1));
             #endregion
 
             #endregion
