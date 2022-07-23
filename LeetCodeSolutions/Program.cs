@@ -119,13 +119,26 @@ namespace LeetCodeSolutions
                 var jewChars= jewels.ToCharArray();
                 var stonesChars= stones.ToCharArray();
                 var counter = 0;
-                foreach (var item in jewChars)
+                var jLength = jewChars.Length;
+                var sLength = stonesChars.Length;
+                //foreach (var item in jewChars)
+                //{
+                //    jewelsSet.Add(item);
+                //}
+                for (int i = 0; i < jLength; i++)
                 {
-                    jewelsSet.Add(item);
+                    jewelsSet.Add(jewChars[i]);
                 }
-                foreach (var item in stonesChars)
+                //foreach (var item in stonesChars)
+                //{
+                //    if (jewelsSet.Contains(item))
+                //    {
+                //        counter++;
+                //    }
+                //}
+                for (int i = 0; i < sLength; i++)
                 {
-                    if (jewelsSet.Contains(item))
+                    if (jewelsSet.Contains(stonesChars[i]))
                     {
                         counter++;
                     }
