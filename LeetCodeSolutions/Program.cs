@@ -113,6 +113,27 @@ namespace LeetCodeSolutions
                 }
             }
 
+            int NumJewelsInStones(string jewels, string stones)
+            {
+                var jewelsSet = new HashSet<char>();
+                var jewChars= jewels.ToCharArray();
+                var stonesChars= stones.ToCharArray();
+                var counter = 0;
+                foreach (var item in jewChars)
+                {
+                    jewelsSet.Add(item);
+                }
+                foreach (var item in stonesChars)
+                {
+                    if (jewelsSet.Contains(item))
+                    {
+                        counter++;
+                    }
+                }
+
+                return counter;
+            }
+
 
             #region functionCalls   
             #region TwoSum
@@ -123,8 +144,12 @@ namespace LeetCodeSolutions
             #endregion
             #region AddTwoNumbers
             #endregion
+            #region NumJewelsInStones
+            var jawels1 = "aA";
+            var stones1 = "aAaAbbbb"; 
+            Console.WriteLine(NumJewelsInStones(jawels1, stones1));
+            #endregion
 
-           
             #endregion
 
 
