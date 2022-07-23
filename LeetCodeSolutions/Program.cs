@@ -199,7 +199,27 @@ namespace LeetCodeSolutions
                 return false;
             }
 
+            ListNode GetIntersectionNode(ListNode headA, ListNode headB)
+            {
 
+                var aSet = new HashSet<ListNode>();
+
+                while (headA != null)
+                {
+                    aSet.Add(headA);
+                    headA = headA.next;
+                }
+                while (headB != null)
+                {
+                    if (aSet.Contains(headB))
+                    {
+                        return headB;
+                    }
+                    headB = headB.next;
+                }
+                return null;
+
+            }
 
 
 
@@ -225,8 +245,8 @@ namespace LeetCodeSolutions
             //Console.WriteLine(NumUniqueEmails(emails1));
             #endregion
             #region ContainsDuplicate
-            int[] nums1 = { 1, 2, 1, 1 };
-            Console.WriteLine(ContainsDuplicate(nums1));
+            //int[] nums1 = { 1, 2, 1, 1 };
+            //Console.WriteLine(ContainsDuplicate(nums1));
             #endregion
 
             #endregion
