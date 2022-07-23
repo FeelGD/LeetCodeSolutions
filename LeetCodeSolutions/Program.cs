@@ -116,8 +116,8 @@ namespace LeetCodeSolutions
             int NumJewelsInStones(string jewels, string stones)
             {
                 var jewelsSet = new HashSet<char>();
-                var jewChars= jewels.ToCharArray();
-                var stonesChars= stones.ToCharArray();
+                var jewChars = jewels.ToCharArray();
+                var stonesChars = stones.ToCharArray();
                 var counter = 0;
                 var jLength = jewChars.Length;
                 var sLength = stonesChars.Length;
@@ -147,6 +147,44 @@ namespace LeetCodeSolutions
                 return counter;
             }
 
+            int NumUniqueEmails(string[] emails)
+            {
+                var counter = 0;
+                var emailsSet = new HashSet<string>();
+                foreach (var email in emails)
+                {
+                    var spitted = email.Split('@');
+                    var prefix = spitted[0];
+                    var suffix = spitted[1];
+                    if (prefix.Contains("+"))
+                    {
+                        prefix = prefix.Split('+')[0];
+                    }
+                    if (prefix.Contains("."))
+                    {
+                        prefix = prefix.Replace(".", "");
+                    }
+                    if (!emailsSet.Contains(prefix +"@"+ suffix))
+                    {
+                        emailsSet.Add(prefix +"@"+ suffix);
+                        counter++;
+                    }
+
+                }
+
+
+                return counter;
+            }
+
+
+
+
+
+
+
+
+
+
 
             #region functionCalls   
             #region TwoSum
@@ -158,9 +196,13 @@ namespace LeetCodeSolutions
             #region AddTwoNumbers
             #endregion
             #region NumJewelsInStones
-            var jawels1 = "aA";
-            var stones1 = "aAaAbbbb"; 
-            Console.WriteLine(NumJewelsInStones(jawels1, stones1));
+            //var jawels1 = "aA";
+            //var stones1 = "aAaAbbbb"; 
+            //Console.WriteLine(NumJewelsInStones(jawels1, stones1));
+            #endregion
+            #region NumUniqueEmails
+            //string[] emails1 = { "test.email+alex@leetcode.com", "test.email.leet+alex@code.com" };
+            //Console.WriteLine(NumUniqueEmails(emails1));
             #endregion
 
             #endregion
