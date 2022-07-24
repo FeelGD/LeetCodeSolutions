@@ -316,6 +316,58 @@ namespace LeetCodeSolutions
                 return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
             }
 
+            int SumOfLeftLeaves(TreeNode root)
+            {
+                if (root == null)
+                {
+                    return 0;
+                }
+                else if (root.left != null && root.left.left == null && root.left.right == null)
+                {
+                    return root.left.val + SumOfLeftLeaves(root.right);
+                }
+
+                else
+                {
+                    return SumOfLeftLeaves(root.left) + SumOfLeftLeaves(root.right);
+                }
+            }
+        
+
+
+
+
+
+
+
+
+
+
+
+        #region functionCalls   
+        #region TwoSum
+        //int[] nums1 = { 3, 2, 4, 15 };
+        //int target1 = 6;
+        //Console.WriteLine(TwoSumV1(nums1, target1));
+        //Console.WriteLine(TwoSumV2(nums1, target1));
+        #endregion
+        #region AddTwoNumbers
+        #endregion
+        #region NumJewelsInStones
+        //var jawels1 = "aA";
+        //var stones1 = "aAaAbbbb"; 
+        //Console.WriteLine(NumJewelsInStones(jawels1, stones1));
+        #endregion
+        #region NumUniqueEmails
+        //string[] emails1 = { "test.email+alex@leetcode.com", "test.email.leet+alex@code.com" };
+        //Console.WriteLine(NumUniqueEmails(emails1));
+        #endregion
+        #region ContainsDuplicate
+        //int[] nums1 = { 1, 2, 1, 1 };
+        //Console.WriteLine(ContainsDuplicate(nums1));
+        #endregion
+
+        #endregion
 
 
 
@@ -328,48 +380,12 @@ namespace LeetCodeSolutions
 
 
 
-            #region functionCalls   
-            #region TwoSum
-            //int[] nums1 = { 3, 2, 4, 15 };
-            //int target1 = 6;
-            //Console.WriteLine(TwoSumV1(nums1, target1));
-            //Console.WriteLine(TwoSumV2(nums1, target1));
-            #endregion
-            #region AddTwoNumbers
-            #endregion
-            #region NumJewelsInStones
-            //var jawels1 = "aA";
-            //var stones1 = "aAaAbbbb"; 
-            //Console.WriteLine(NumJewelsInStones(jawels1, stones1));
-            #endregion
-            #region NumUniqueEmails
-            //string[] emails1 = { "test.email+alex@leetcode.com", "test.email.leet+alex@code.com" };
-            //Console.WriteLine(NumUniqueEmails(emails1));
-            #endregion
-            #region ContainsDuplicate
-            //int[] nums1 = { 1, 2, 1, 1 };
-            //Console.WriteLine(ContainsDuplicate(nums1));
-            #endregion
-
-            #endregion
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-            Console.ReadKey();
+        Console.ReadKey();
         }
     }
 }
