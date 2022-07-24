@@ -265,6 +265,36 @@ namespace LeetCodeSolutions
                 return current;
             }
 
+            bool IsPowerOfTwo(int n)
+            {
+                if (n<1)
+                {
+                    return false;
+                }
+
+                while (n != 1)
+                {
+                    if (n%2!=0)
+                    {
+                        return false;
+                    }
+                    n/= 2; 
+
+                }
+                return true;
+            }
+            bool IsPowerOfTwoBitWise(int n)
+            {
+
+                if (n<1)
+                {
+                    return false;
+                }
+                return (n & (n - 1)) == 0;
+
+
+            }
+
             #region functionCalls   
             #region TwoSum
             //int[] nums1 = { 3, 2, 4, 15 };
