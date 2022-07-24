@@ -248,6 +248,22 @@ namespace LeetCodeSolutions
                 return primes;
             }
 
+            int FibonacciNth(int n)
+            {
+                if(n==0)return 0;
+                if(n==1)return 1;
+
+                var current = 1;
+                var previous = 1;
+                var counter = n - 1;
+                while (counter > 0)
+                {
+                    current = current + previous;
+                    previous = current - previous;
+                    counter--;
+                }
+                return current;
+            }
 
             #region functionCalls   
             #region TwoSum
