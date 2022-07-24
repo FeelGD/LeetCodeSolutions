@@ -230,7 +230,23 @@ namespace LeetCodeSolutions
                 return Oklid(num2, num1 % num2);
             }
 
-
+            IList<int> PrimeFactors(int n)
+            {
+                var primes = new List<int>();
+                for (int i = 2; i <= Math.Sqrt(n); i++)
+                {
+                    while (n % i == 0)
+                    {
+                        n /= i;
+                        primes.Add(i);
+                    }
+                }
+                if (n!=1)
+                {
+                    primes.Add(n);
+                }
+                return primes;
+            }
 
 
             #region functionCalls   
