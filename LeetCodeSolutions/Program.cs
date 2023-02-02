@@ -29,6 +29,8 @@ namespace LeetCodeSolutions
             this.right = right;
         }
     }
+
+
     public class Solutions
     {
         static void Main(string[] args)
@@ -235,7 +237,7 @@ namespace LeetCodeSolutions
 
             int Oklid(int num1, int num2)
             {
-                if (num2==0)
+                if (num2 == 0)
                 {
                     return num1;
                 }
@@ -253,7 +255,7 @@ namespace LeetCodeSolutions
                         primes.Add(i);
                     }
                 }
-                if (n!=1)
+                if (n != 1)
                 {
                     primes.Add(n);
                 }
@@ -262,8 +264,8 @@ namespace LeetCodeSolutions
 
             int FibonacciNth(int n)
             {
-                if(n==0)return 0;
-                if(n==1)return 1;
+                if (n == 0) return 0;
+                if (n == 1) return 1;
 
                 var current = 1;
                 var previous = 1;
@@ -279,18 +281,18 @@ namespace LeetCodeSolutions
 
             bool IsPowerOfTwo(int n)
             {
-                if (n<1)
+                if (n < 1)
                 {
                     return false;
                 }
 
                 while (n != 1)
                 {
-                    if (n%2!=0)
+                    if (n % 2 != 0)
                     {
                         return false;
                     }
-                    n/= 2; 
+                    n /= 2;
 
                 }
                 return true;
@@ -298,7 +300,7 @@ namespace LeetCodeSolutions
             bool IsPowerOfTwoBitWise(int n)
             {
 
-                if (n<1)
+                if (n < 1)
                 {
                     return false;
                 }
@@ -360,6 +362,109 @@ namespace LeetCodeSolutions
                 return root1;
 
             }
+            
+            string Translate(string morseToEnglish, string textToTranslate)
+            {
+                Dictionary<string, string> morseCodes = new Dictionary<string, string>
+            {
+                { "A", ".-" },
+                { "B", "-..." },
+                { "C", "-.-." },
+                { "D", "-.." },
+                { "E", "." },
+                { "F", "..-." },
+                { "G", "--." },
+                { "H", "...." },
+                { "I", ".." },
+                { "J", ".---" },
+                { "K", "-.-" },
+                { "L", ".-.." },
+                { "M", "--" },
+                { "N", "-." },
+                { "O", "---" },
+                { "P", ".--." },
+                { "Q", "--.-" },
+                { "R", ".-." },
+                { "S", "..." },
+                { "T", "-" },
+                { "U", "..-" },
+                { "V", "...-" },
+                { "W", ".--" },
+                { "X", "-..-" },
+                { "Y", "-.--" },
+                { "Z", "--.." },
+                { "1", ".----" },
+                { "2", "..---" },
+                { "3", "...--" },
+                { "4", "....-" },
+                { "5", "....." },
+                { "6", "-...." },
+                { "7", "--..." },
+                { "8", "---.." },
+                { "9", "----." },
+                { "0", "-----" },
+                { ".", ".-.-.-" }
+            };
+
+                if (morseToEnglish == "true")
+                {
+                    string[] words = textToTranslate.Split(new string[] { "   " }, StringSplitOptions.None);
+                    string translatedText = "";
+
+                    foreach (string word in words)
+                    {
+                        string[] letters = word.Split(' ');
+                        foreach (string letter in letters)
+                        {
+
+                            if (!morseCodes.ContainsValue(letter))
+                            {
+                                if (!letter.Equals("."))
+                                {
+                                    return "Invalid Morse Code Or Spacing";
+                                }
+                            }
+
+
+                            foreach (KeyValuePair<string, string> code in morseCodes)
+                            {
+                                if (code.Value == letter)
+                                {
+                                    translatedText += code.Key;
+                                    break;
+                                }
+                            }
+                        }
+                        translatedText += " ";
+                    }
+
+                    return translatedText.TrimEnd();
+                }
+                else
+                {
+                    textToTranslate = textToTranslate.ToUpper();
+                    string translatedText = "";
+
+                    foreach (char letter in textToTranslate)
+                    {
+                        if (letter == ' ')
+                        {
+                            translatedText += "   ";
+                        }
+                        else
+                        {
+                            if (!morseCodes.ContainsKey(letter.ToString()))
+                            {
+                                return "Invalid Morse Code Or Spacing";
+                            }
+                            translatedText += morseCodes[letter.ToString()] + " ";
+                        }
+                    }
+
+                    return translatedText.TrimEnd();
+                }
+            }
+
 
 
 
@@ -392,6 +497,22 @@ namespace LeetCodeSolutions
             #endregion
 
             #endregion
+
+
+
+            Console.WriteLine(Translate("false", "The wizard quickly jinxed the gnomes before they vaporized."));
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
